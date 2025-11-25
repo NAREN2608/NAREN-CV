@@ -214,6 +214,68 @@ body {
 #toggle-mode { right: 20px; }
 #lang-toggle { right: 170px; }
 
+/* --- MODO MÓVIL --- */
+@media (max-width: 768px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    flex-direction: column;
+    min-height: auto;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  /* Columna izquierda */
+  .left {
+    width: 100%;
+    padding: 25px;
+  }
+
+  /* Columna derecha */
+  .right {
+    width: 100%;
+    padding: 25px;
+  }
+
+  /* Foto más pequeña */
+  .photo-box {
+    height: 180px;
+  }
+
+  /* Nombre más pequeño */
+  .name {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  /* Título más pequeño */
+  .title {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Botones de GitHub y LinkedIn en columna */
+  .links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* Botones flotantes que estorban: moverlos abajo */
+  #toggle-mode, #lang-toggle {
+    top: auto;
+    bottom: 20px;
+    transform: scale(0.9);
+  }
+
+  #toggle-mode { right: 20px; }
+  #lang-toggle { right: 120px; }
+}
+  
 </style>
 </head>
 
@@ -419,3 +481,4 @@ document.getElementById("toggle-mode").onclick = () => {
 
 </body>
 </html>
+
