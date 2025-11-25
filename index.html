@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Naren Cipagauta – Curriculum Vitae</title>
+
+<style>
+/* PALETA PRINCIPAL */
+:root {
+  --primary: #7a00ff;
+  --secondary: #9f4dff;
+  --dark: #0f0f14;
+  --light: #ffffff;
+  --gray: #f4f4f6;
+  --text-dark: #1a1a1a;
+}
+
+/* MODO OSCURO */
+.dark-mode {
+  --light: #15151c;
+  --gray: #1e1e26;
+  --text-dark: #f1f1f1;
+}
+
+/* GENERAL */
+body {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background: var(--gray);
+  color: var(--text-dark);
+  transition: 0.5s;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  background: var(--light);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  min-height: 100vh;
+}
+
+/* COLUMNA IZQUIERDA */
+.left {
+  width: 35%;
+  background: var(--gray);
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+/* Foto */
+.photo-box {
+  width: 100%;
+  height: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 20px rgba(122, 0, 255, 0.3);
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Titulos izquierda */
+.left h3 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Soft skills */
+.soft-skill {
+  background: var(--light);
+  padding: 10px 12px;
+  margin-bottom: 7px;
+  border-left: 3px solid var(--primary);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Idiomas */
+.language-bar {
+  margin-bottom: 12px;
+}
+
+.language-bar span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.bar {
+  width: 100%;
+  height: 10px;
+  background: #cfcfcf;
+  border-radius: 50px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 50px;
+}
+
+/* Skills tecnicos */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  text-align: center;
+}
+
+.skill-grid div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+}
+
+.skill-grid img {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 4px;
+}
+
+/* COLUMNA DERECHA */
+.right {
+  width: 67%;
+  background: var(--light);
+  padding: 40px 50px;
+  box-sizing: border-box;
+}
+
+.name {
+  font-size: 38px;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 18px;
+  color: var(--primary);
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+/* Botones de enlaces */
+.links {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.link-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 0 12px rgba(122, 0, 255, 0.4);
+}
+
+.link-btn:hover {
+  background: var(--secondary);
+}
+
+/* Secciones */
+.section-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 25px;
+  color: var(--primary);
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: 3px solid var(--primary);
+}
+
+/* Botones superiores */
+#toggle-mode, #lang-toggle {
+  position: fixed;
+  top: 20px;
+  padding: 10px 18px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(122, 0, 255, 0.5);
+}
+
+#toggle-mode { right: 20px; }
+#lang-toggle { right: 170px; }
+
+</style>
+</head>
+
+<body>
+
+<!-- Botones -->
+<button id="lang-toggle">EN</button>
+<button id="toggle-mode">☀ / 🌙</button>
+
+<div class="container">
+
+<!-- COLUMNA IZQUIERDA -->
+<div class="left">
+
+  <div class="photo-box">
+    <img src="FOTO CV.jpg" alt="Foto Naren">
+  </div>
+
+  <div>
+    <h3 class="lang" data-es="CONTACTO PERSONAL" data-en="PERSONAL CONTACT">CONTACTO PERSONAL</h3>
+    <p>📍 Bogotá, Colombia</p>
+    <p>📧 narenestivencipagauta13@gmail.com</p>
+  </div>
+
+  <div>
+    <h3 class="lang" data-es="HABILIDADES BLANDAS" data-en="SOFT SKILLS">HABILIDADES BLANDAS</h3>
+
+    <div class="soft-skill lang" data-es="Liderazgo" data-en="Leadership">Liderazgo</div>
+    <div class="soft-skill lang" data-es="Comunicación" data-en="Communication">Comunicación</div>
+    <div class="soft-skill lang" data-es="Trabajo en equipo" data-en="Teamwork">Trabajo en equipo</div>
+    <div class="soft-skill lang" data-es="Pensamiento crítico" data-en="Critical thinking">Pensamiento crítico</div>
+    <div class="soft-skill lang" data-es="Autocontrol" data-en="Self-control">Autocontrol</div>
+    <div class="soft-skill lang" data-es="Resolución de problemas" data-en="Problem solving">Resolución de problemas</div>
+  </div>
+
+  <div>
+    <h3 class="lang" data-es="IDIOMAS" data-en="LANGUAGES">IDIOMAS</h3>
+
+    <div class="language-bar">
+      <span class="lang" data-es="Español — Nativo" data-en="Spanish — Native">Español — Nativo</span>
+      <div class="bar"><div class="fill" style="width:100%"></div></div>
+    </div>
+
+    <div class="language-bar">
+      <span class="lang" data-es="Inglés — B1/B2" data-en="English — B1/B2">Inglés — B1/B2</span>
+      <div class="bar"><div class="fill" style="width:70%"></div></div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="lang" data-es="HABILIDADES TÉCNICAS" data-en="TECHNICAL SKILLS">HABILIDADES TÉCNICAS</h3>
+
+    <div class="skill-grid">
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"><span>Java</span></div>
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"><span>JS</span></div>
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><span>Python</span></div>
+
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"><span>C++</span></div>
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"><span>Kotlin</span></div>
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><span>MySQL</span></div>
+
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"><span>Docker</span></div>
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"><span>Apache</span></div>
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><span>HTML</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- COLUMNA DERECHA -->
+<div class="right">
+
+  <h1 class="name lang"
+      data-es="Naren Stiven Cipagauta Estupiñán"
+      data-en="Naren Stiven Cipagauta Estupiñán">
+      Naren Stiven Cipagauta Estupiñán
+  </h1>
+
+  <p class="title lang"
+     data-es="Estudiante de Ingeniería de Sistemas"
+     data-en="Systems Engineering Student">
+     Estudiante de Ingeniería de Sistemas
+  </p>
+
+  <div class="links">
+    <a class="link-btn" href="https://github.com/NAREN2608" target="_blank">GitHub</a>
+    <a class="link-btn" href="https://www.linkedin.com/in/naren-stiven-cipagauta-estupiñan-002311174" target="_blank">LinkedIn</a>
+  </div>
+
+  <!-- Perfil Profesional -->
+  <div class="section">
+    <h2 class="section-title lang"
+        data-es="PERFIL PROFESIONAL"
+        data-en="PROFESSIONAL PROFILE">PERFIL PROFESIONAL</h2>
+
+    <p class="lang"
+       data-es="Estudiante de Ingeniería de Sistemas orientado al desarrollo de software con enfoque en calidad, diseño limpio y soluciones funcionales. Me interesa crear tecnología intuitiva que facilite la vida de las personas y mantenerme en constante aprendizaje de herramientas modernas."
+       data-en="Systems engineering student focused on software development with an emphasis on quality, clean design, and functional solutions. I am interested in creating intuitive technology that improves people's lives and continuously learning modern tools.">
+       Estudiante de Ingeniería de Sistemas orientado al desarrollo de software...
+    </p>
+  </div>
+
+  <!-- Experiencia -->
+  <div class="section">
+    <h2 class="section-title lang"
+        data-es="EXPERIENCIA ACADÉMICA & PROYECTOS"
+        data-en="ACADEMIC EXPERIENCE & PROJECTS">
+        EXPERIENCIA ACADÉMICA & PROYECTOS
+    </h2>
+
+    <div class="timeline-item">
+      <h3 class="lang"
+          data-es="Aplicación móvil — Proyecto principal"
+          data-en="Mobile Application — Main Project">Aplicación móvil — Proyecto principal</h3>
+
+      <p class="lang"
+         data-es="Desarrollo de una aplicación móvil funcional utilizando Kotlin, arquitectura organizada, manejo de datos y control de versiones con Git. Proyecto enfocado en usabilidad y diseño limpio."
+         data-en="Development of a functional mobile app using Kotlin, structured architecture, data handling and Git version control. Focused on usability and clean design.">
+         Desarrollo de una aplicación móvil funcional...
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3 class="lang"
+          data-es="Proyectos universitarios"
+          data-en="University Projects">Proyectos universitarios</h3>
+
+      <p class="lang"
+         data-es="Desarrollo de aplicaciones y sistemas como parte de la carrera (Java, Python, C++, UML, SQL). Experiencia en análisis, diseño, modelado y resolución de problemas."
+         data-en="Development of applications and systems as part of my degree (Java, Python, C++, UML, SQL). Experience with analysis, design, modeling and problem-solving.">
+         Desarrollo de aplicaciones y sistemas...
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3 class="lang"
+          data-es="Experiencia autónoma"
+          data-en="Self-Learning Experience">Experiencia autónoma</h3>
+
+      <p class="lang"
+         data-es="Creación de aplicaciones pequeñas pero funcionales para aprendizaje continuo, explorando frameworks, APIs, bases de datos y conceptos de ingeniería."
+         data-en="Creation of small but functional applications for continuous learning, exploring frameworks, APIs, databases and engineering concepts.">
+         Creación de aplicaciones pequeñas...
+      </p>
+    </div>
+  </div>
+
+  <!-- Educación -->
+  <div class="section">
+    <h2 class="section-title lang"
+        data-es="EDUCACIÓN"
+        data-en="EDUCATION">EDUCACIÓN</h2>
+
+    <p class="lang"
+       data-es="Ingeniería de Sistemas — Universidad Antonio Nariño"
+       data-en="Systems Engineering — Universidad Antonio Nariño">
+       Ingeniería de Sistemas — Universidad Antonio Nariño
+    </p>
+
+    <p class="lang"
+       data-es="Finalización de materias: 2026 · Graduación estimada: 2027"
+       data-en="Course completion: 2026 · Estimated graduation: 2027">
+       Finalización de materias: 2026 · Graduación estimada: 2027
+    </p>
+  </div>
+
+  <!-- Certificados -->
+  <div class="section">
+    <h2 class="section-title lang"
+        data-es="CERTIFICADOS"
+        data-en="CERTIFICATIONS">CERTIFICADOS</h2>
+
+    <p class="lang"
+       data-es="Cuento con una variedad de certificados en desarrollo, bases de datos, testing y herramientas tecnológicas, visibles en mi perfil de LinkedIn."
+       data-en="I have a variety of certifications in development, databases, testing and modern tools, available on my LinkedIn profile.">
+       Cuento con una variedad de certificados...
+    </p>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+/* Toggle Idioma */
+const btn = document.getElementById("lang-toggle");
+let lang = "es";
+
+btn.addEventListener("click", () => {
+  lang = lang === "es" ? "en" : "es";
+  btn.textContent = lang === "es" ? "EN" : "ES";
+
+  document.querySelectorAll(".lang").forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
+});
+
+/* Toggle Modo oscuro */
+document.getElementById("toggle-mode").onclick = () => {
+  document.body.classList.toggle("dark-mode");
+};
+</script>
+
+</body>
+</html>
