@@ -15,4 +15,13 @@ body.dark{--purple:#c18bff;--purple-light:#d3aaff;--muted:#d0c9d8}
 .objective{margin-top:12px!important;padding-left:13px;border-left:2px solid var(--purple);color:var(--muted)}
 body.dark .link-btn:not(.secondary){background:#7a00ff;color:#fff}
 @media(max-width:760px){.photo-box{width:min(100%,240px);height:auto;aspect-ratio:4/5;margin:0 auto 24px}}
+.skill-icons{display:flex;align-items:center;justify-content:center;gap:5px;min-height:37px}
+.skill-icons img{display:block;width:31px;height:31px;object-fit:contain}
+.skill-grid div>span:last-child{overflow-wrap:anywhere}
+body.dark .skill-icons img[src*="github/"]{filter:invert(1)}
+.soft-skills{display:flex;flex-wrap:wrap;gap:8px}
+.soft-skills span{padding:6px 10px;border:1px solid rgba(122,0,255,.2);border-radius:999px;background:rgba(122,0,255,.07);color:var(--ink);font-size:11px;font-weight:700;line-height:1.35}
+.additional-project{margin-top:24px}
+.additional-project h3{font-size:17px}
+@media(max-width:760px){.soft-skills{gap:7px}.soft-skills span{font-size:11px}}
 
