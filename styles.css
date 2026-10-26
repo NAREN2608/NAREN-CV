@@ -7,3 +7,12 @@ body.dark{--paper:#17151c;--left:#211e28;--page:#100e14;--ink:#f4f1f8;--muted:#b
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 @media print{body{padding:0;background:#fff}.controls{display:none}.cv-container{width:100%;margin:0;box-shadow:none;border-radius:0;grid-template-columns:34% 66%}.left-column,.right-column{padding:25px}.link-btn{box-shadow:none}}
 
+/* Retrato profesional 4:5 y mejor contraste para el modo oscuro. */
+body.dark{--purple:#c18bff;--purple-light:#d3aaff;--muted:#d0c9d8}
+.photo-box{width:min(100%,260px);height:auto;aspect-ratio:4/5;margin:0 auto 28px}
+.photo-box img{object-position:center 38%}
+.skill-level{margin:13px 0 8px;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.objective{margin-top:12px!important;padding-left:13px;border-left:2px solid var(--purple);color:var(--muted)}
+body.dark .link-btn:not(.secondary){background:#7a00ff;color:#fff}
+@media(max-width:760px){.photo-box{width:min(100%,240px);height:auto;aspect-ratio:4/5;margin:0 auto 24px}}
+
