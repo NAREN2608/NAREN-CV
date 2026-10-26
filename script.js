@@ -26,15 +26,15 @@
     b.addEventListener('click', function () { apply(b.dataset.set); save(b.dataset.set); });
   });
 
-  // Si existe web/assets/foto.jpg se usa automáticamente; si no, se mantiene el monograma.
+  // La foto se carga desde la raíz del sitio para que funcione en GitHub Pages.
   var img = new Image();
   img.onload = function () {
     hasPhoto = true;
-    photo.style.backgroundImage = 'url(assets/foto.jpg)';
+    photo.style.backgroundImage = 'url(foto.jpg)';
     photo.classList.add('has-img');
     apply(document.documentElement.lang);
   };
-  img.src = 'assets/foto.jpg';
+  img.src = 'foto.jpg';
 
   apply(load());
 })();
