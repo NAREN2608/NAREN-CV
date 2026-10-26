@@ -1,484 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Naren Cipagauta – Curriculum Vitae</title>
-
-<style>
-/* PALETA PRINCIPAL */
-:root {
-  --primary: #7a00ff;
-  --secondary: #9f4dff;
-  --dark: #0f0f14;
-  --light: #ffffff;
-  --gray: #f4f4f6;
-  --text-dark: #1a1a1a;
-}
-
-/* MODO OSCURO */
-.dark-mode {
-  --light: #15151c;
-  --gray: #1e1e26;
-  --text-dark: #f1f1f1;
-}
-
-/* GENERAL */
-body {
-  font-family: "Montserrat", sans-serif;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
-  background: var(--gray);
-  color: var(--text-dark);
-  transition: 0.5s;
-  box-sizing: border-box;
-}
-
-.container {
-  max-width: 1000px;
-  width: 100%;
-  background: var(--light);
-  border-radius: 14px;
-  overflow: hidden;
-  display: flex;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-  min-height: 100vh;
-}
-
-/* COLUMNA IZQUIERDA */
-.left {
-  width: 35%;
-  background: var(--gray);
-  padding: 35px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  box-sizing: border-box;
-  overflow-wrap: anywhere;
-}
-
-/* Foto */
-.photo-box {
-  width: 100%;
-  height: 220px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 2px solid var(--primary);
-  box-shadow: 0 0 20px rgba(122, 0, 255, 0.3);
-}
-
-.photo-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Titulos izquierda */
-.left h3 {
-  font-size: 15px;
-  letter-spacing: 1px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-/* Soft skills */
-.soft-skill {
-  background: var(--light);
-  padding: 10px 12px;
-  margin-bottom: 7px;
-  border-left: 3px solid var(--primary);
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-/* Idiomas */
-.language-bar {
-  margin-bottom: 12px;
-}
-
-.language-bar span {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.bar {
-  width: 100%;
-  height: 10px;
-  background: #cfcfcf;
-  border-radius: 50px;
-  margin-top: 5px;
-  overflow: hidden;
-}
-
-.fill {
-  height: 100%;
-  background: var(--primary);
-  border-radius: 50px;
-}
-
-/* Skills tecnicos */
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  text-align: center;
-}
-
-.skill-grid div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 13px;
-}
-
-.skill-grid img {
-  width: 35px;
-  height: 35px;
-  margin-bottom: 4px;
-}
-
-/* COLUMNA DERECHA */
-.right {
-  width: 67%;
-  background: var(--light);
-  padding: 40px 50px;
-  box-sizing: border-box;
-}
-
-.name {
-  font-size: 38px;
-  font-weight: 900;
-  margin-bottom: 0;
-}
-
-.title {
-  font-size: 18px;
-  color: var(--primary);
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-
-/* Botones de enlaces */
-.links {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
-}
-
-.link-btn {
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  background: var(--primary);
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-  box-shadow: 0 0 12px rgba(122, 0, 255, 0.4);
-}
-
-.link-btn:hover {
-  background: var(--secondary);
-}
-
-/* Secciones */
-.section-title {
-  font-size: 18px;
-  font-weight: 800;
-  margin-top: 25px;
-  color: var(--primary);
-}
-
-.timeline-item {
-  margin-bottom: 20px;
-  padding-left: 15px;
-  border-left: 3px solid var(--primary);
-}
-
-/* Botones superiores */
-#toggle-mode, #lang-toggle {
-  position: fixed;
-  top: 20px;
-  padding: 10px 18px;
-  background: var(--primary);
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  border: none;
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(122, 0, 255, 0.5);
-}
-
-#toggle-mode { right: 20px; }
-#lang-toggle { right: 170px; }
-
-/* --- MODO MÓVIL --- */
-@media (max-width: 768px) {
-
-  body {
-    padding: 15px;
-  }
-
-  .container {
-    flex-direction: column;
-    min-height: auto;
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  /* Columna izquierda */
-  .left {
-    width: 100%;
-    padding: 25px;
-  }
-
-  /* Columna derecha */
-  .right {
-    width: 100%;
-    padding: 25px;
-  }
-
-  /* Foto más pequeña */
-  .photo-box {
-    height: 180px;
-  }
-
-  /* Nombre más pequeño */
-  .name {
-    font-size: 28px;
-    text-align: center;
-  }
-
-  /* Título más pequeño */
-  .title {
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  /* Botones de GitHub y LinkedIn en columna */
-  .links {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
-  /* Botones flotantes que estorban: moverlos abajo */
-  #toggle-mode, #lang-toggle {
-    top: auto;
-    bottom: 20px;
-    transform: scale(0.9);
-  }
-
-  #toggle-mode { right: 20px; }
-  #lang-toggle { right: 120px; }
-}
-  
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naren Stiven Cipagauta Estupiñán · Desarrollador junior</title>
+<meta name="description" content="Estudiante de Ingeniería de Sistemas orientado al desarrollo web. Busco prácticas profesionales o un puesto de desarrollador junior.">
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+<a class="skip" href="#contenido"><span data-l="es">Saltar al contenido</span><span data-l="en">Skip to content</span></a>
 
-<!-- Botones -->
-<button id="lang-toggle">EN</button>
-<button id="toggle-mode">☀ / 🌙</button>
+<aside class="side">
+  <div class="photo" id="photo" role="img" aria-label="Espacio para fotografía profesional">NC</div>
+  <h1>Naren Stiven<br>Cipagauta Estupiñán</h1>
+  <p class="role"><span data-l="es">Desarrollo de software · enfoque web</span><span data-l="en">Software development · web focus</span></p>
+  <p class="where">Bogotá, Colombia</p>
 
-<div class="container">
-
-<!-- COLUMNA IZQUIERDA -->
-<div class="left">
-
-  <div class="photo-box">
-    <img src="FOTO CV.jpg" alt="Foto Naren">
+  <div class="lang" role="group" aria-label="Idioma / Language">
+    <button type="button" data-set="es" aria-pressed="true">ES</button>
+    <button type="button" data-set="en" aria-pressed="false">EN</button>
   </div>
 
-  <div>
-    <h3 class="lang" data-es="CONTACTO PERSONAL" data-en="PERSONAL CONTACT">CONTACTO PERSONAL</h3>
-    <p>📍 Bogotá, Colombia</p>
-    <p>📧 narenestivencipagauta13@gmail.com</p>
-  </div>
+  <nav aria-label="Secciones">
+    <a href="#proyectos"><span data-l="es">Proyectos</span><span data-l="en">Projects</span></a>
+    <a href="#educacion"><span data-l="es">Educación</span><span data-l="en">Education</span></a>
+    <a href="#habilidades"><span data-l="es">Habilidades</span><span data-l="en">Skills</span></a>
+    <a href="#idiomas"><span data-l="es">Idiomas</span><span data-l="en">Languages</span></a>
+    <a href="#contacto"><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
+  </nav>
+</aside>
 
-  <div>
-    <h3 class="lang" data-es="HABILIDADES BLANDAS" data-en="SOFT SKILLS">HABILIDADES BLANDAS</h3>
-
-    <div class="soft-skill lang" data-es="Liderazgo" data-en="Leadership">Liderazgo</div>
-    <div class="soft-skill lang" data-es="Comunicación" data-en="Communication">Comunicación</div>
-    <div class="soft-skill lang" data-es="Trabajo en equipo" data-en="Teamwork">Trabajo en equipo</div>
-    <div class="soft-skill lang" data-es="Pensamiento crítico" data-en="Critical thinking">Pensamiento crítico</div>
-    <div class="soft-skill lang" data-es="Autocontrol" data-en="Self-control">Autocontrol</div>
-    <div class="soft-skill lang" data-es="Resolución de problemas" data-en="Problem solving">Resolución de problemas</div>
-  </div>
-
-  <div>
-    <h3 class="lang" data-es="IDIOMAS" data-en="LANGUAGES">IDIOMAS</h3>
-
-    <div class="language-bar">
-      <span class="lang" data-es="Español — Nativo" data-en="Spanish — Native">Español — Nativo</span>
-      <div class="bar"><div class="fill" style="width:100%"></div></div>
-    </div>
-
-    <div class="language-bar">
-      <span class="lang" data-es="Inglés — B1/B2" data-en="English — B1/B2">Inglés — B1/B2</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-  </div>
-
-  <div>
-    <h3 class="lang" data-es="HABILIDADES TÉCNICAS" data-en="TECHNICAL SKILLS">HABILIDADES TÉCNICAS</h3>
-
-    <div class="skill-grid">
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"><span>Java</span></div>
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"><span>JS</span></div>
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><span>Python</span></div>
-
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"><span>C++</span></div>
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"><span>Kotlin</span></div>
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><span>MySQL</span></div>
-
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"><span>Docker</span></div>
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"><span>Apache</span></div>
-      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><span>HTML</span></div>
-    </div>
-  </div>
-
-</div>
-
-<!-- COLUMNA DERECHA -->
-<div class="right">
-
-  <h1 class="name lang"
-      data-es="Naren Stiven Cipagauta Estupiñán"
-      data-en="Naren Stiven Cipagauta Estupiñán">
-      Naren Stiven Cipagauta Estupiñán
-  </h1>
-
-  <p class="title lang"
-     data-es="Estudiante de Ingeniería de Sistemas"
-     data-en="Systems Engineering Student">
-     Estudiante de Ingeniería de Sistemas
-  </p>
-
-  <div class="links">
-    <a class="link-btn" href="https://github.com/NAREN2608" target="_blank">GitHub</a>
-    <a class="link-btn" href="https://www.linkedin.com/in/naren-stiven-cipagauta-estupiñan-002311174" target="_blank">LinkedIn</a>
-  </div>
-
-  <!-- Perfil Profesional -->
-  <div class="section">
-    <h2 class="section-title lang"
-        data-es="PERFIL PROFESIONAL"
-        data-en="PROFESSIONAL PROFILE">PERFIL PROFESIONAL</h2>
-
-    <p class="lang"
-       data-es="Estudiante de Ingeniería de Sistemas orientado al desarrollo de software con enfoque en calidad, diseño limpio y soluciones funcionales. Me interesa crear tecnología intuitiva que facilite la vida de las personas y mantenerme en constante aprendizaje de herramientas modernas."
-       data-en="Systems engineering student focused on software development with an emphasis on quality, clean design, and functional solutions. I am interested in creating intuitive technology that improves people's lives and continuously learning modern tools.">
-       Estudiante de Ingeniería de Sistemas orientado al desarrollo de software...
+<main id="contenido">
+  <section class="intro" aria-labelledby="t-perfil">
+    <h2 id="t-perfil" class="sr"><span data-l="es">Perfil</span><span data-l="en">Profile</span></h2>
+    <p class="lead"><span data-l="es">Estudiante de Ingeniería de Sistemas en la etapa final de la carrera, con enfoque en desarrollo web y una base amplia en desarrollo de software.</span><span data-l="en">Systems Engineering student in the final stage of the degree, focused on web development with a broad software development foundation.</span></p>
+    <p><span data-l="es">Terminé y presenté mi trabajo de grado, Inventario Pro, un sistema de gestión de inventarios desarrollado en equipo. Busco prácticas profesionales o un puesto de desarrollador junior donde seguir aprendiendo con proyectos reales.</span><span data-l="en">I completed and presented my degree project, Inventario Pro, an inventory management system built as a team. I am looking for a professional internship or a junior developer role where I can keep learning on real projects.</span></p>
+    <p class="actions">
+      <a class="btn" href="mailto:narenestivencipagauta13@gmail.com"><span data-l="es">Escribirme un correo</span><span data-l="en">Send me an email</span></a>
+      <a class="btn ghost" href="assets/Naren-Cipagauta-CV-es.pdf" download><span data-l="es">CV en PDF (español)</span><span data-l="en">CV as PDF (Spanish)</span></a>
     </p>
-  </div>
+  </section>
 
-  <!-- Experiencia -->
-  <div class="section">
-    <h2 class="section-title lang"
-        data-es="EXPERIENCIA ACADÉMICA & PROYECTOS"
-        data-en="ACADEMIC EXPERIENCE & PROJECTS">
-        EXPERIENCIA ACADÉMICA & PROYECTOS
-    </h2>
+  <section id="proyectos" aria-labelledby="t-proy">
+    <h2 id="t-proy"><span data-l="es">Proyectos</span><span data-l="en">Projects</span></h2>
+    <article class="feature">
+      <h3>Inventario Pro</h3>
+      <p class="meta"><span data-l="es">Trabajo de grado · en equipo con otro estudiante · terminado y presentado</span><span data-l="en">Degree project · team of two students · completed and presented</span></p>
+      <p><span data-l="es">Sistema para apoyar la gestión de inventarios y operaciones comerciales de los negocios Tascolac y CE Distribuciones.</span><span data-l="en">System that supports inventory management and commercial operations for the businesses Tascolac and CE Distribuciones.</span></p>
+      <ul>
+        <li><span data-l="es">Gestión de productos</span><span data-l="en">Product management</span></li>
+        <li><span data-l="es">Gestión de inventario</span><span data-l="en">Inventory management</span></li>
+        <li><span data-l="es">Gestión de ventas</span><span data-l="en">Sales management</span></li>
+        <li><span data-l="es">Gestión de usuarios y roles</span><span data-l="en">User and role management</span></li>
+      </ul>
+      <p class="stack"><strong>Stack:</strong> React, TypeScript, Tailwind CSS, PHP, Apache, MySQL, Docker</p>
+      <p class="note"><span data-l="es">El repositorio y la demostración son privados.</span><span data-l="en">The repository and demo are private.</span></p>
+    </article>
+  </section>
 
-    <div class="timeline-item">
-      <h3 class="lang"
-          data-es="Aplicación móvil — Proyecto principal"
-          data-en="Mobile Application — Main Project">Aplicación móvil — Proyecto principal</h3>
+  <section id="educacion" aria-labelledby="t-edu">
+    <h2 id="t-edu"><span data-l="es">Educación</span><span data-l="en">Education</span></h2>
+    <h3><span data-l="es">Ingeniería de Sistemas</span><span data-l="en">Systems Engineering</span></h3>
+    <p class="meta">Universidad Antonio Nariño · Bogotá, Colombia</p>
+    <p><span data-l="es">Etapa final de la carrera, con las materias al día y el trabajo de grado presentado. Graduación prevista: 2027.</span><span data-l="en">Final stage of the degree, coursework up to date and degree project presented. Expected graduation: 2027.</span></p>
+  </section>
 
-      <p class="lang"
-         data-es="Desarrollo de una aplicación móvil funcional utilizando Kotlin, arquitectura organizada, manejo de datos y control de versiones con Git. Proyecto enfocado en usabilidad y diseño limpio."
-         data-en="Development of a functional mobile app using Kotlin, structured architecture, data handling and Git version control. Focused on usability and clean design.">
-         Desarrollo de una aplicación móvil funcional...
-      </p>
-    </div>
+  <section id="habilidades" aria-labelledby="t-hab">
+    <h2 id="t-hab"><span data-l="es">Habilidades técnicas</span><span data-l="en">Technical skills</span></h2>
+    <p class="hint"><span data-l="es">Niveles autodeclarados, sin evaluación formal.</span><span data-l="en">Self-assessed levels, not formally evaluated.</span></p>
+    <dl class="skills">
+      <dt><span data-l="es">Intermedio</span><span data-l="en">Intermediate</span></dt>
+      <dd>HTML/CSS · Python · Git/GitHub · Docker</dd>
+      <dt><span data-l="es">Básico</span><span data-l="en">Basic</span></dt>
+      <dd>JavaScript · TypeScript · React · PHP · MySQL · C++ · Kotlin</dd>
+    </dl>
+  </section>
 
-    <div class="timeline-item">
-      <h3 class="lang"
-          data-es="Proyectos universitarios"
-          data-en="University Projects">Proyectos universitarios</h3>
+  <section id="idiomas" aria-labelledby="t-idi">
+    <h2 id="t-idi"><span data-l="es">Idiomas</span><span data-l="en">Languages</span></h2>
+    <ul class="plain">
+      <li><span data-l="es">Español: lengua principal</span><span data-l="en">Spanish: first language</span></li>
+      <li><span data-l="es">Inglés: B1–B2 autodeclarado, sin certificado</span><span data-l="en">English: self-assessed B1–B2, not certified</span></li>
+    </ul>
+  </section>
 
-      <p class="lang"
-         data-es="Desarrollo de aplicaciones y sistemas como parte de la carrera (Java, Python, C++, UML, SQL). Experiencia en análisis, diseño, modelado y resolución de problemas."
-         data-en="Development of applications and systems as part of my degree (Java, Python, C++, UML, SQL). Experience with analysis, design, modeling and problem-solving.">
-         Desarrollo de aplicaciones y sistemas...
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <h3 class="lang"
-          data-es="Experiencia autónoma"
-          data-en="Self-Learning Experience">Experiencia autónoma</h3>
-
-      <p class="lang"
-         data-es="Creación de aplicaciones pequeñas pero funcionales para aprendizaje continuo, explorando frameworks, APIs, bases de datos y conceptos de ingeniería."
-         data-en="Creation of small but functional applications for continuous learning, exploring frameworks, APIs, databases and engineering concepts.">
-         Creación de aplicaciones pequeñas...
-      </p>
-    </div>
-  </div>
-
-  <!-- Educación -->
-  <div class="section">
-    <h2 class="section-title lang"
-        data-es="EDUCACIÓN"
-        data-en="EDUCATION">EDUCACIÓN</h2>
-
-    <p class="lang"
-       data-es="Ingeniería de Sistemas — Universidad Antonio Nariño"
-       data-en="Systems Engineering — Universidad Antonio Nariño">
-       Ingeniería de Sistemas — Universidad Antonio Nariño
-    </p>
-
-    <p class="lang"
-       data-es="Finalización de materias: 2026 · Graduación estimada: 2027"
-       data-en="Course completion: 2026 · Estimated graduation: 2027">
-       Finalización de materias: 2026 · Graduación estimada: 2027
-    </p>
-  </div>
-
-  <!-- Certificados -->
-  <div class="section">
-    <h2 class="section-title lang"
-        data-es="CERTIFICADOS"
-        data-en="CERTIFICATIONS">CERTIFICADOS</h2>
-
-    <p class="lang"
-       data-es="Cuento con una variedad de certificados en desarrollo, bases de datos, testing y herramientas tecnológicas, visibles en mi perfil de LinkedIn."
-       data-en="I have a variety of certifications in development, databases, testing and modern tools, available on my LinkedIn profile.">
-       Cuento con una variedad de certificados...
-    </p>
-  </div>
-
-</div>
-
-</div>
-
-<script>
-/* Toggle Idioma */
-const btn = document.getElementById("lang-toggle");
-let lang = "es";
-
-btn.addEventListener("click", () => {
-  lang = lang === "es" ? "en" : "es";
-  btn.textContent = lang === "es" ? "EN" : "ES";
-
-  document.querySelectorAll(".lang").forEach(el => {
-    el.textContent = el.getAttribute(`data-${lang}`);
-  });
-});
-
-/* Toggle Modo oscuro */
-document.getElementById("toggle-mode").onclick = () => {
-  document.body.classList.toggle("dark-mode");
-};
-</script>
-
+  <section id="contacto" aria-labelledby="t-con">
+    <h2 id="t-con"><span data-l="es">Contacto</span><span data-l="en">Contact</span></h2>
+    <ul class="plain">
+      <li><a href="mailto:narenestivencipagauta13@gmail.com">narenestivencipagauta13@gmail.com</a></li>
+      <li><a href="https://github.com/NAREN2608" rel="noopener">github.com/NAREN2608</a></li>
+      <li><a href="https://www.linkedin.com/in/naren-stiven-cipagauta-estupinan-002311174" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </section>
+</main>
+<script src="script.js"></script>
 </body>
 </html>
-
